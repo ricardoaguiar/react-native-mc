@@ -1,12 +1,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-
-export default function CustomButton() {
+import {
+  Button,
+  TouchableHighlight,
+  TouchableNativeFeedback,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from 'react-native';
+export const CustomButton = ({ onPress, title }) => {
   return (
-    <View>
-      <Text>Get Weather</Text>
-    </View>
+    <TouchableHighlight onPress={onPress}>
+      <Text>{title}</Text>
+    </TouchableHighlight>
   );
-}
-
-
+};

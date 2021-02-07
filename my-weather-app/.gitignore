@@ -9,8 +9,7 @@ npm-debug.*
 *.orig.*
 web-build/
 .env
-services/
+services/image.js
 
 # macOS
 .DS_Store
-services/

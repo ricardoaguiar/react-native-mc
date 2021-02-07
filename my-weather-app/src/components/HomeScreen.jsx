@@ -6,17 +6,19 @@ import {
   Button,
   ImageBackground,
   Image,
+  Modal,
 } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { getWeatherByCityName } from '../../services/index';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as Location from 'expo-location';
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ navigation }) => {
   const [currentLocation, setCurrentLocation] = useState('Vejle');
   const [weatherData, setWeatherData] = useState(null);
 
-  console.log(weatherData);
+  // console.log(weatherData);
 
   const getWeather = useCallback(async () => {
     try {
@@ -31,7 +33,7 @@ export const HomeScreen = () => {
     getWeather();
   }, []);
 
-  const kelvinTemp = `${weatherData?.main?.temp}`;
+  const kelvinTemp = Number(`${weatherData?.main?.temp}`);
   const celciusTemp = (kelvinTemp - 273.15).toFixed(1);
 
   const feelsLikeKelvin = `${weatherData?.main?.feels_like}`;
@@ -55,7 +57,7 @@ export const HomeScreen = () => {
               size={22}
               onPress={getWeather}
               iconStyle={styles.searchButton}
-              borderRadius={'0'}
+              borderRadius={0}
               backgroundColor={'#fff2'}
             />
           </View>
