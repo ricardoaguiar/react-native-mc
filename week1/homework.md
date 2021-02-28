@@ -17,3 +17,5 @@ Using `expo-cli` create a new react-native project for each of the layouts prese
 ### Feed
 
 <img src="/week1/assets/feed-screen-wireframe.jpg" alt="drawing" width="200"/>
+
+
